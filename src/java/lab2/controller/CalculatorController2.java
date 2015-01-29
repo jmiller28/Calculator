@@ -25,7 +25,7 @@ import lab2.model.CalculatorService;
 public class CalculatorController2 extends HttpServlet {
     
     
-    private static final String RESULT_PAGE = "calculator.jsp";
+    private static final String RESULT_PAGE = "lab2/calculator.jsp";
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>

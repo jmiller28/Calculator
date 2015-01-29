@@ -3,27 +3,36 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package lab1.controller;
+package lab3.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import lab1.model.CalculatorService;
+import lab3.model.CalculatorService;
 
 /**
  *
  * @author John
  */
-@WebServlet(name = "CalculatorController", urlPatterns = {"/calculator"})
-public class CalculatorController extends HttpServlet {
+@WebServlet(name = "CalculatorController3", urlPatterns = {"/controller3"})
+public class CalculatorController3 extends HttpServlet {
 
-    private static final String RESULT_PAGE = "lab1/result.jsp";
+    /**
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
+     * methods.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
+    
+    private static final String RESULT_PAGE = "lab2/calculator.jsp";
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -38,14 +47,20 @@ public class CalculatorController extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            String length = request.getParameter("length");
-            String width = request.getParameter("width");
+            
+            String lengthString = request.getParameter("length");
+            String widthString = request.getParameter("width");
+            
+            double length = Double.parseDouble(lengthString);
+            double width = Double.parseDouble(widthString);
 
             CalculatorService cs = new CalculatorService();
 
-            Double result = cs.calculateArea(length, width);
+            Double result = cs.calculateRectangleArea(length, width);
+            
+            Double result = cs.calculateCircleArea(radius);
 
-            request.setAttribute("area", result);
+            request.setAttribute("area", Double.toString(result));
 
             RequestDispatcher view
                     = request.getRequestDispatcher(RESULT_PAGE);
@@ -54,7 +69,6 @@ public class CalculatorController extends HttpServlet {
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-
     /**
      * Handles the HTTP <code>GET</code> method.
      *
