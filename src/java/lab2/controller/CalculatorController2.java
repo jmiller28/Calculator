@@ -21,10 +21,8 @@ import lab2.model.CalculatorService;
  */
 @WebServlet(name = "CalculatorController2", urlPatterns = {"/controller2"})
 
-
 public class CalculatorController2 extends HttpServlet {
-    
-    
+
     private static final String RESULT_PAGE = "lab2/calculator.jsp";
 
     /**
@@ -39,24 +37,22 @@ public class CalculatorController2 extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            
-            String lengthString = request.getParameter("length");
-            String widthString = request.getParameter("width");
-            
-            double length = Double.parseDouble(lengthString);
-            double width = Double.parseDouble(widthString);
+        String resultPage = "lab2/calculator.jsp";
+        String lengthString = request.getParameter("length");
+        String widthString = request.getParameter("width");
 
-            CalculatorService cs = new CalculatorService();
+        double length = Double.parseDouble(lengthString);
+        double width = Double.parseDouble(widthString);
 
-            Double result = cs.calculateArea(length, width);
+        CalculatorService cs = new CalculatorService();
 
-            request.setAttribute("area", Double.toString(result));
+        Double result = cs.calculateArea(length, width);
 
-            RequestDispatcher view
-                    = request.getRequestDispatcher(RESULT_PAGE);
-            view.forward(request, response);
-        }
+        request.setAttribute("area", Double.toString(result));
+
+        RequestDispatcher view
+                = request.getRequestDispatcher(resultPage);
+        view.forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

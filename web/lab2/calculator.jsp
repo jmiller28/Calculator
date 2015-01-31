@@ -19,7 +19,7 @@
                 area = obj.toString();
              }%>   
         <h2>Enter length and width to calculate the area of a rectangle.</h2>
-        <form id='form1' name='form1' method='POST' action='controller2'>
+        <form id='form1' name='form1' method='POST' action='<%= request.getContextPath() + "/controller2"%>'>
             Enter Length:
             <input id="length" name="length" type='text' value=""/>
             Enter Width:

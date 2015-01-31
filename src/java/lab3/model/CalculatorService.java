@@ -22,4 +22,10 @@ public class CalculatorService {
         Double area = radius * radius * Math.PI;
         return area;
     }
+    
+    public double calculateTriangleArea(double base, double height) {
+
+        Double area = base * height * .5;
+        return area;
+    }
 }

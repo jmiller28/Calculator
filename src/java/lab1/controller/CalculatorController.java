@@ -6,8 +6,6 @@
 package lab1.controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -37,24 +35,23 @@ public class CalculatorController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            String length = request.getParameter("length");
-            String width = request.getParameter("width");
 
-            CalculatorService cs = new CalculatorService();
+        String length = request.getParameter("length");
+        String width = request.getParameter("width");
 
-            Double result = cs.calculateArea(length, width);
+        CalculatorService cs = new CalculatorService();
 
-            request.setAttribute("area", result);
+        Double result = cs.calculateArea(length, width);
 
-            RequestDispatcher view
-                    = request.getRequestDispatcher(RESULT_PAGE);
-            view.forward(request, response);
-        }
+        request.setAttribute("area", result);
+
+        RequestDispatcher view
+                = request.getRequestDispatcher(RESULT_PAGE);
+        view.forward(request, response);
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-
     /**
      * Handles the HTTP <code>GET</code> method.
      *

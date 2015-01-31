@@ -1,12 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package lab3.controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -31,8 +25,9 @@ public class CalculatorController3 extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    
-    private static final String RESULT_PAGE = "lab2/calculator.jsp";
+    private static final String CALC_TYPE = "calcType";
+    private static final String RECTANGLE = "rectangle";
+    private static final String CIRCLE = "circle";
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -46,26 +41,47 @@ public class CalculatorController3 extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            
-            String lengthString = request.getParameter("length");
-            String widthString = request.getParameter("width");
-            
-            double length = Double.parseDouble(lengthString);
-            double width = Double.parseDouble(widthString);
 
-            CalculatorService cs = new CalculatorService();
+        String calcType = request.getParameter(CALC_TYPE).toLowerCase();
+        String resultPage = "lab3/calculators.jsp";
+        String lengthString = request.getParameter("length");
+        String widthString = request.getParameter("width");
+        String radiusString = request.getParameter("radius");
+        String baseString = request.getParameter("base");
+        String heightString = request.getParameter("height");
+        Double result = 0.0;
 
-            Double result = cs.calculateRectangleArea(length, width);
-            
-            Double result = cs.calculateCircleArea(radius);
+        CalculatorService cs = new CalculatorService();
 
-            request.setAttribute("area", Double.toString(result));
+        switch (calcType) {
 
-            RequestDispatcher view
-                    = request.getRequestDispatcher(RESULT_PAGE);
-            view.forward(request, response);
+            case "rectangle":
+                double length = Double.parseDouble(lengthString);
+                double width = Double.parseDouble(widthString);
+                result = cs.calculateRectangleArea(length, width);
+                request.setAttribute("areaRectangle", Double.toString(result));
+                break;
+
+            case "circle":
+                double radius = Double.parseDouble(radiusString);
+                result = cs.calculateCircleArea(radius);
+                request.setAttribute("areaCircle", Double.toString(result));
+                break;
+                
+            case "triangle":
+                double base = Double.parseDouble(baseString);
+                double height = Double.parseDouble(heightString);
+                result = cs.calculateTriangleArea(base, height);
+                request.setAttribute("areaTriangle", Double.toString(result));
+                break;
         }
+
+        request.setAttribute("area", Double.toString(result));
+
+        RequestDispatcher view
+                = request.getRequestDispatcher(resultPage);
+        view.forward(request, response);
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
