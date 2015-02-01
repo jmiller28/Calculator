@@ -33,15 +33,18 @@
             <tr> 
                 <td> 
                     <h2>Enter the length and width to calculate the area of a rectangle.</h2>
+                    <img src ="../images/area-of-a-rectangle.gif"/>
                     <form id="form1" name="form1" method="POST" action='<%= request.getContextPath() + "/controller3?calcType=rectangle"%>'>
                         <label for="length">Enter Length:</label>
+
                         <input id="length" name="length" type="text" value=""/>
                         <label for="width">Enter Width:</label>
                         <input id="width" name="width" type="text" value=""/>
                         <label for="area">Area:</label>
                         <input id="area" name="area" type="text" disabled="true" value="<%= areaRectangle%>"/>
                         <div id="submit">
-                        <input type="submit" name="submit" value="Calculate Area"/>
+
+                            <input type="submit" name="submit" value="Calculate Area"/>
                         </div>
                     </form>
                 </td>
@@ -49,6 +52,7 @@
             <tr>
                 <td>
                     <h2>Enter the radius to calculate the area of a circle.</h2>
+                    <img src ="../images/area-of-a-circle.gif"/>
                     <form id="form2" name="form2" method="POST" action="controller3?calcType=circle">
                         Enter Length:
                         <input id="radius" name="radius" type='text' value=""/>
@@ -61,6 +65,7 @@
             <tr>
                 <td>
                     <h2>Enter the base and height to calculate the area of a triangle.</h2>
+                    <img src ="../images/area-of-a-triangle.gif"/>
                     <form id="form3" name="form3" method="POST" action="controller3?calcType=triangle">
                         Enter Base:
                         <input id="base" name="base" type="text" value=""/>
