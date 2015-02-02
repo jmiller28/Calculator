@@ -7,7 +7,10 @@ and open the template in the editor.
     Created on : Jan 21, 2015, 12:06:25 PM
     Author     : John
 */
-h1, h2 {color:#003399;text-align: center;}
+h1, h2 {
+    color:#003399;
+    text-align: center;
+}
 
 body {
 
@@ -19,5 +22,4 @@ body {
 
 ul {
     list-style: square;
-
 }

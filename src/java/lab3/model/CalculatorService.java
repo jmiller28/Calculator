@@ -12,8 +12,10 @@ package lab3.model;
 public class CalculatorService {
 
     public double calculateRectangleArea(double length, double width) {
-
-        Double area = length * width;
+        Double area = 0.0;
+        if (length > 0 && width > 0) {
+           area = length * width;
+        }
         return area;
     }
 

@@ -28,7 +28,7 @@
                 <label for="area">Area:</label>
                 <input id="area" name="area" type="text" disabled="true" value=${areaRectangle} />
                 <br><br>
-                <input type="submit" name="submit" value="Calculate Area"/>
+                <input type="submit" class="shape" name="submit" value="Calculate Area"/>
             </form>
         </div>
         <div name="circle">
@@ -40,7 +40,7 @@
                 <label for="area">Area:</label>
                 <input id="area" name="area" type="text" disabled="true" value=${areaCircle} />
                 <br><br>
-                <input type="submit" name="submit" value="Calculate Area"/>
+                <input type="submit" class="shape" name="submit" value="Calculate Area"/>
             </form>
         </div>
         <div name="triangle">
@@ -54,7 +54,7 @@
                 <label for="area">Area:</label>
                 <input id="area" name="area" type="text" disabled="true" value=${areaTriangle} />
                 <br><br>
-                <input type="submit" name="submit" value="Calculate Area"/>
+                <input type="submit" class="shape" name="submit" value="Calculate Area"/>
             </form>
         </div>
     

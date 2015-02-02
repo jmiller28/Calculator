@@ -7,9 +7,9 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-    <head>
+    <head><link href="../calculator.css" rel="stylesheet" type="text/css"/>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link href="../calculator.css" rel="stylesheet" type="text/css"/>
+        <link href="../css/calculator.css" rel="stylesheet" type="text/css"/>
         <title>Area Calculators</title>
     </head>
     <body>

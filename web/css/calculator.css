@@ -7,17 +7,30 @@ and open the template in the editor.
     Created on : Jan 21, 2015, 12:06:25 PM
     Author     : John
 */
-h1, h2 {color:#003399;text-align: center;}
-
+h1, h2 {
+    color:#330000;
+    text-align: center;
+}
+.shape {
+    width: 200px;
+    font-size: large;
+}
+div{
+    padding: 20px;
+    border: teal;
+    border-style: groove;
+    margin-bottom: 10px;
+}
 body {
-
+    padding: 20px;
+    border: aliceblue;
+    border-style: groove;
     margin:10px;
     font:1em Arial, sans-serif;
-    background-color:beige;
+    background-color:#cde5ee ;
     font-size: 100%;
 }
 
 ul {
-    list-style: square;
-
+    list-style: circle;
 }
