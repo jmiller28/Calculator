@@ -11,10 +11,13 @@ package lab3.model;
  */
 public class CalculatorService {
 
+    private String sAnswer;
+    private double answer;
+    
     public double calculateRectangleArea(double length, double width) {
         Double area = 0.0;
         if (length > 0 && width > 0) {
-           area = length * width;
+            area = length * width;
         }
         return area;
     }
@@ -24,7 +27,7 @@ public class CalculatorService {
         Double area = radius * radius * Math.PI;
         return area;
     }
-    
+
     public double calculateTriangleArea(double base, double height) {
 
         Double area = base * height * .5;

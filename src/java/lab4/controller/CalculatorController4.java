@@ -13,7 +13,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import lab3.model.CalculatorService;
+import lab4.model.CalculatorService;
 
 /**
  *
@@ -21,7 +21,9 @@ import lab3.model.CalculatorService;
  */
 @WebServlet(name = "CalculatorController4", urlPatterns = {"/controller4"})
 public class CalculatorController4 extends HttpServlet {
-private static final String CALC_TYPE = "calcType";
+
+    private static final String CALC_TYPE = "calcType";
+
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -34,8 +36,8 @@ private static final String CALC_TYPE = "calcType";
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        
-         String calcType = request.getParameter(CALC_TYPE).toLowerCase();
+
+        String calcType = request.getParameter(CALC_TYPE).toLowerCase();
         String resultPage = "lab4/calculators.jsp";
         String lengthString = request.getParameter("length");
         String widthString = request.getParameter("width");
@@ -43,29 +45,29 @@ private static final String CALC_TYPE = "calcType";
         String baseString = request.getParameter("base");
         String heightString = request.getParameter("height");
         Double result = 0.0;
-
+        String answer = "";
         CalculatorService cs = new CalculatorService();
 
         switch (calcType) {
 
             case "rectangle":
-                double length = Double.parseDouble(lengthString);
-                double width = Double.parseDouble(widthString);
-                result = cs.calculateRectangleArea(length, width);
-                request.setAttribute("areaRectangle", Double.toString(result));
+                String length = lengthString;
+                String width = widthString;
+                answer = cs.calculateRectangleArea(length, width);
+                request.setAttribute("areaRectangle", answer);
                 break;
 
             case "circle":
-                double radius = Double.parseDouble(radiusString);
-                result = cs.calculateCircleArea(radius);
-                request.setAttribute("areaCircle", Double.toString(result));
+                String radius = radiusString;
+                answer = cs.calculateCircleArea(radius);
+                request.setAttribute("areaCircle", answer);
                 break;
-                
+
             case "triangle":
-                double base = Double.parseDouble(baseString);
-                double height = Double.parseDouble(heightString);
-                result = cs.calculateTriangleArea(base, height);
-                request.setAttribute("areaTriangle", Double.toString(result));
+                String base = baseString;
+                String height = heightString;
+                answer = cs.calculateTriangleArea(base, height);
+                request.setAttribute("areaTriangle", answer);
                 break;
         }
 

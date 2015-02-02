@@ -17,45 +17,38 @@
         <link href="${contextPath}/css/calculator.css" rel="stylesheet" type="text/css"/>
         <title>Area Calculators</title>
     </head>
-        <div name="rectangle"> 
-            <h2>Enter the length and width to calculate the area of a rectangle.</h2>
-            <img src ="${contextPath}/images/area-of-a-rectangle.gif" alt="Rectangle"/>
-            <form id="form1" name="form1" method="POST" action="${contextPath}/controller4?calcType=rectangle"/>
-                <label for="length">Enter Length:</label>
-                <input id="length" name="length" type="text" placeholder="e.g., 9.5" value=""/>
-                <label for="width">Enter Width:</label>
-                <input id="width" name="width" type="text" placeholder="e.g., 5.75" value=""/>
-                <label for="area">Area:</label>
-                <input id="area" name="area" type="text" disabled="true" value=${areaRectangle} />
-                <br><br>
-                <input type="submit" class="shape" name="submit" value="Calculate Area"/>
-            </form>
-        </div>
-        <div name="circle">
-            <h2>Enter the radius to calculate the area of a circle.</h2>
-            <img src ="${contextPath}/images/area-of-a-circle.gif" alt="Circle"/>
-            <form id="form2" name="form2" method="POST" action="${contextPath}/controller4?calcType=circle"/>
-                <label for="radius">Enter Radius</label>
-                <input id="radius" name="radius" type='text' placeholder="e.g., 6.5" value=""/>
-                <label for="area">Area:</label>
-                <input id="area" name="area" type="text" disabled="true" value=${areaCircle} />
-                <br><br>
-                <input type="submit" class="shape" name="submit" value="Calculate Area"/>
-            </form>
-        </div>
-        <div name="triangle">
-            <h2>Enter the base and height to calculate the area of a triangle.</h2>
-            <img src ="${contextPath}/images/area-of-a-triangle.gif" alt="Triangle"/>
-            <form id="form3" name="form3" method="POST" action="${contextPath}/controller4?calcType=triangle"/>
-                <label for="base">Enter Base</label>
-                <input id="base" name="base" type="text" placeholder="e.g., 6" value=""/>
-                <label for="height">Enter Height</label>
-                <input id="height" name="height" type="text" placeholder="e.g., 8.75" value=""/>
-                <label for="area">Area:</label>
-                <input id="area" name="area" type="text" disabled="true" value=${areaTriangle} />
-                <br><br>
-                <input type="submit" class="shape" name="submit" value="Calculate Area"/>
-            </form>
-        </div>
-    
+    <div name="rectangle"> 
+        <h2>Enter the length and width to calculate the area of a rectangle.</h2>
+        <img src ="${contextPath}/images/area-of-a-rectangle.gif" alt="Rectangle"/>
+        <form id="form1" name="form1" method="POST" action="${contextPath}/controller4?calcType=rectangle">
+            <label for="length">Enter Length:</label>
+            <input id="length" name="length" type="text" placeholder="e.g., 9.5" value=""/>
+            <label for="width">Enter Width:</label>
+            <input id="width" name="width" type="text" placeholder="e.g., 5.75" value=""/>
+            <p>${areaRectangle}</p>
+            <input type="submit" class="shape" name="submit" value="Calculate Area"/>
+        </form>
+    </div>
+    <div name="circle">
+        <h2>Enter the radius to calculate the area of a circle.</h2>
+        <img src ="${contextPath}/images/area-of-a-circle.gif" alt="Circle"/>
+        <form id="form2" name="form2" method="POST" action="${contextPath}/controller4?calcType=circle">
+            <label for="radius">Enter Radius</label>
+            <input id="radius" name="radius" type='text' placeholder="e.g., 6.5" value=""/>
+            <p>${areaCircle}</p>
+            <input type="submit" class="shape" name="submit" value="Calculate Area"/>
+        </form>
+    </div>
+    <div name="triangle">
+        <h2>Enter the base and height to calculate the area of a triangle.</h2>
+        <img src ="${contextPath}/images/area-of-a-triangle.gif" alt="Triangle"/>
+        <form id="form3" name="form3" method="POST" action="${contextPath}/controller4?calcType=triangle">
+            <label for="base">Enter Base</label>
+            <input id="base" name="base" type="text" placeholder="e.g., 6" value=""/>
+            <label for="height">Enter Height</label>
+            <input id="height" name="height" type="text" placeholder="e.g., 8.75" value=""/>
+            <p>${areaTriangle}</p>
+            <input type="submit" class="shape" name="submit" value="Calculate Area"/>
+        </form>
+    </div>
 </html>

@@ -12,14 +12,16 @@ h1, h2 {
     text-align: center;
 }
 .shape {
-    width: 200px;
+    width: 250px;
     font-size: large;
 }
 div{
+    height: 200px;
     padding: 20px;
     border: teal;
     border-style: groove;
     margin-bottom: 10px;
+    background-color:#d8e5ee;
 }
 body {
     padding: 20px;
@@ -27,10 +29,21 @@ body {
     border-style: groove;
     margin:10px;
     font:1em Arial, sans-serif;
-    background-color:#cde5ee ;
+    background-color:#ddd9ee;
     font-size: 100%;
 }
+img {
+    height:125px;
+    width:auto;
+    float: right;
+}
 
+text {
+    clear:both;
+}
+p {
+    font-weight: bold;
+}
 ul {
     list-style: circle;
 }
