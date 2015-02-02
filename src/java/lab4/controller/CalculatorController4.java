@@ -1,6 +1,12 @@
-package lab3.controller;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package lab4.controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,12 +19,9 @@ import lab3.model.CalculatorService;
  *
  * @author John
  */
-@WebServlet(name = "CalculatorController3", urlPatterns = {"/controller3"})
-public class CalculatorController3 extends HttpServlet {
-    private static final String CALC_TYPE = "calcType";
-//    private static final String RECTANGLE = "rectangle";
-//    private static final String CIRCLE = "circle";
-
+@WebServlet(name = "CalculatorController4", urlPatterns = {"/controller4"})
+public class CalculatorController4 extends HttpServlet {
+private static final String CALC_TYPE = "calcType";
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -31,9 +34,9 @@ public class CalculatorController3 extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-
-        String calcType = request.getParameter(CALC_TYPE).toLowerCase();
-        String resultPage = "lab3/calculators.jsp";
+        
+         String calcType = request.getParameter(CALC_TYPE).toLowerCase();
+        String resultPage = "lab4/calculators.jsp";
         String lengthString = request.getParameter("length");
         String widthString = request.getParameter("width");
         String radiusString = request.getParameter("radius");
